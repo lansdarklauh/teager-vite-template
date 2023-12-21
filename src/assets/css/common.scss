@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+$widthBase: 1920;
+$heightBase: 1080;
+$widthMobile: 375;
+$heightMobile: 812;
+
+@function px2vw($px) {
+  @return math.div($px, $widthBase) * 100 + vw;
+}
+
+@function px2vh($px) {
+  @return math.div($px, $heightBase) * 100 + vh;
+}
+
+@function px2vhMobile($px) {
+  @return math.div($px, $heightMobile) * 100 + vh;
+}
+
+@function px2vwMobile($px) {
+  @return math.div($px, $widthMobile) * 100 + vw;
+}
+
+.img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
