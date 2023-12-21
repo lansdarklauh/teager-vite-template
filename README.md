@@ -1,12 +1,13 @@
 # teager-vite-template
 
 该模板为开发web时可使用的通用模板，当PC端和移动端要求整合为一个项目时可使用该模板
-使用框架：Vue3
-构建打包工具：Vite
-组件库：ElementPlus+Vant
-页面管理插件：Vue-Router
-状态管理工具：Pinia
-开发语言：Typescript
+
+1. 使用框架：Vue3
+2. 构建打包工具：Vite
+3. 组件库：ElementPlus+Vant
+4. 页面管理插件：Vue-Router
+5. 状态管理工具：Pinia
+6. 开发语言：Typescript
 
 # Tips
 
