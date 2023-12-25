@@ -1,15 +1,13 @@
 import axios from 'axios'
-import { tokenRef } from '@/services/token'
 import { resResolve, resReject, reqResolve, reqReject } from './request'
+
+let defAxios = null
 
 export function createAxios(options = {}) {
   const defaultOptions = {
     baseURL: import.meta.env.VITE_APP_BASE_API,
     timeout: 60000,
-    headers: {
-      'edger-token': tokenRef.token,
-      'edger-srand': tokenRef.srand,
-    },
+    headers: {},
   }
   const service = axios.create({
     ...defaultOptions,
@@ -17,7 +15,9 @@ export function createAxios(options = {}) {
   })
   service.interceptors.request.use(reqResolve, reqReject)
   service.interceptors.response.use(resResolve, resReject)
-  return service
+  defAxios = service
 }
 
-export const defAxios = createAxios()
+export const getAxios = () => {
+  return defAxios
+}

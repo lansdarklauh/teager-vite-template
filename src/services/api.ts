@@ -1,7 +1,12 @@
-import { defAxios as request } from '@/services/http'
+import { getAxios, createAxios } from './http'
+
+const request = getAxios()
+if(request){
+  request.createAxios()
+}
 
 export function example(data = {}) {
-  return request({
+  return getAxios()({
     url: '/',
     method: 'get',
     data,

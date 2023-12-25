@@ -13,6 +13,7 @@
     "noImplicitThis": false,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["vite/client"]
   }
 }
