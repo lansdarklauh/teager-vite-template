@@ -3,7 +3,7 @@ import { io } from 'socket.io-client'
 let socket = null
 
 export function initSocket() {
-  socket = io({
+  socket = io('/socket/example', {
     transports: ['websocket'],
   })
 

@@ -11,24 +11,34 @@
 </script>
 
 <template>
-  <h1 class="title">
-    <van-highlight class="mx-1" :keywords="keywords" :source-string="text"></van-highlight>
-  </h1>
-  <div class="button-box">
-    <van-button type="primary" @click="replacePage('element-plus')">Vant4官网</van-button>
+  <div class="Mobile-content">
+    <h1 class="title">
+      <van-highlight class="mx-1" :keywords="keywords" :source-string="text"></van-highlight>
+    </h1>
+    <div class="button-box">
+      <van-button type="primary" @click="replacePage('element-plus')">Vant4官网</van-button>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-  .title {
-    text-align: center;
-    .mx-1 {
-      font-size: px2vwMobile(32);
+  .Mobile-content {
+    max-width: 1200px;
+    margin: px2vh(10) auto 0;
+    padding: px2vh(24) 0 0;
+    background-color: #8febcc;
+    border-radius: px2vh(20);
+    .title {
+      text-align: center;
+      .mx-1 {
+        font-size: px2vwMobile(16);
+      }
     }
-  }
-  .button-box {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    .button-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 0 px2vhMobile(24);
+    }
   }
 </style>

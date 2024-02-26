@@ -5,6 +5,11 @@ $heightBase: 1080;
 $widthMobile: 375;
 $heightMobile: 812;
 
+$mainGreen:#2bb88a;
+$mainBlue:#00a2ff;
+$mainGold:#ffd87f;
+$darkBlue:#262b41;
+
 @function px2vw($px) {
   @return math.div($px, $widthBase) * 100 + vw;
 }

@@ -5,9 +5,10 @@ import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from '@vant/auto-import-resolver'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from "vite-plugin-mock";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command, mode }) => ({
   plugins: [
     vue(),
     AutoImport({
@@ -16,6 +17,10 @@ export default defineConfig({
     Components({
       resolvers: [VantResolver(), ElementPlusResolver()],
     }),
+    viteMockServe({
+      mockPath: "./src/mock",
+      enable: command === "serve" && mode === "mock",
+    })
   ],
   publicDir: 'public',
   resolve: {
@@ -52,23 +57,23 @@ export default defineConfig({
     cors: true,
     proxy: {
       '/api': {
-        target: 'https://192.168.3.1:7370/',
+        target: 'https://127.0.0.1:25565/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
         headers: {
-          Referer: 'https://192.168.3.1:7370',
+          Referer: 'https://127.0.0.1:25565',
         },
       },
-      '/socket.io': {
-        target: 'https://192.168.3.1:7370/',
+      '/socket': {
+        target: 'https://127.0.0.1:8210/',
         ws: true,
         changeOrigin: true,
         secure: false,
         headers: {
-          Referer: 'https://192.168.3.1:7370',
+          Referer: 'https://127.0.0.1:8210',
         },
       },
     },
   },
-})
+}))

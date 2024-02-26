@@ -1,13 +1,10 @@
-import { getAxios, createAxios } from './http'
+import { getAxios } from './http'
 
 const request = getAxios()
-if(request){
-  request.createAxios()
-}
 
 export function example(data = {}) {
-  return getAxios()({
-    url: '/',
+  return request({
+    url: '/mock/api/getAdress',
     method: 'get',
     data,
   })

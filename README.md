@@ -8,6 +8,7 @@
 4. 页面管理插件：Vue-Router
 5. 状态管理工具：Pinia
 6. 开发语言：Typescript
+7. 数据模拟：vite-plugin-mock
 
 # Tips
 

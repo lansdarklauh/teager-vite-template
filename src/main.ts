@@ -1,6 +1,7 @@
 import 'normalize.css/normalize.css'
 import '@/assets/css/main.scss'
 import { initSocket } from './socketio'
+import "@/mock/index"
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -11,7 +12,7 @@ import router from './router'
 
 const app = createApp(App)
 
-app.config.globalProperties.$socket = initSocket()
+// app.config.globalProperties.$socket = initSocket()
 
 app.use(createPinia())
 app.use(router)

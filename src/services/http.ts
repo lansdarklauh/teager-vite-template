@@ -16,8 +16,9 @@ export function createAxios(options = {}) {
   service.interceptors.request.use(reqResolve, reqReject)
   service.interceptors.response.use(resResolve, resReject)
   defAxios = service
+  return defAxios
 }
 
 export const getAxios = () => {
-  return defAxios
+  return defAxios || createAxios()
 }
