@@ -1,6 +1,9 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
+  import { RouterLink, RouterView, useRouter } from 'vue-router'
   import Title from './components/TitleComponent.vue'
+  if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+    router.push('/mobile')
+  }
 </script>
 
 <template>
